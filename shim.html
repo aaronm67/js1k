@@ -1,73 +1,73 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
-    <head>
-        <title>JS1k, 1k demo submission [ID]</title>
-        <meta charset="utf-8" />
-    </head>
-    <body>
-        <canvas id="c"></canvas>
-        <script>
-            var b = document.body;
-            var c = document.getElementsByTagName('canvas')[0];
-            var a = c.getContext('2d');
-            document.body.clientWidth; // fix bug in webkit: http://qfox.nl/weblog/218
-        </script>
-        <script>    
-    // initialize an empty multidimentional array of "height(l)" tall into k"
+        <head>
+                <title>JS1k, 1k demo submission [ID]</title>
+                <meta charset="utf-8" />
+        </head>
+        <body>
+                <canvas id="c"></canvas>
+                <script>
+                        var b = document.body;
+                        var c = document.getElementsByTagName('canvas')[0];
+                        var a = c.getContext('2d');
+                        document.body.clientWidth; // fix bug in webkit: http://qfox.nl/weblog/218
+                </script>
+                <script>    
+        // initialize an empty multidimentional array of "height(l)" tall into k"
+        λ=Function;
 
-
-  //function q() { i = []; for(h = 0;h < j;h++) { i[h] = [] } }
-  function r() {
-    for(b = 0;b < j;b++) {
-      for(e = 0;e < k;e++) {
-        a.fillStyle = g[b][e] ? "red" : "#eee", a.font = f + 8 + "pt serif", a.fillRect(e * f + 1, b * f + 1, f - 1, f - 1)
-      }
-    }
-  }
-  var i, k, j, f, l, m, s = window.innerWidth;
-  m = window.innerHeight;
-  var t, p, g, u, h, b, e, o, n;
-  l = s - 100;
-  m -= 200;
-  f = ~~(s / 20);
-  k = ~~(l / f) * f / f;
-  j = ~~(m / f) * f / f;
-  t = 0;
-  c.width = l;
-  c.height = m;
-  c.onmouseup = l = function() {
-    u = setInterval(function() {
-      q();
-      for(b = 0;b < j;b++) {
-        for(e = 0;e < k;e++) {
-          n = g[b][e] ? -1 : 0;
-          for(h = -1;2 > h;h++) {
-            for(o = -1;2 > o;o++) {
-              g[(j + (b + h)) % j][(k + (e + o)) % k] && n++
+    //function q() { i = []; for(h = 0;h < j;h++) { i[h] = [] } }
+    function r() {
+        for(b = 0;b < j;b++) {
+            for(e = 0;e < k;e++) {
+                a.fillStyle = g[b][e] ? "red" : "#eee", a.font = f + 8 + "pt serif", a.fillRect(e * f + 1, b * f + 1, f - 1, f - 1)
             }
-          }
-          g[b][e] ? 1 < n && 4 > n && (i[b][e] = 1) : 3 == n && (i[b][e] = 1)
         }
-      }
-      g = i;
-      t++;
-      r()
-    }, 99);
-    p = 0
-  };
-  c.onmousedown = function() {
-    p = 1;
-    clearInterval(u)
-  };
-  c.onmousemove = c.onclick = function(e) {
-    b = ~~(e.offsetY / f) + 1;
-    d = ~~(e.offsetX / f);
-    p ? "mousemove" == e.type && (g[b][d] = 1) : g[b][d] = !g[b][d];
-    r()
-  };
-  q();
-  g = i;
-  l()
-        </script>
-    </body>
+    }
+    var i, k, j, f, l, m, s = window.innerWidth;
+    m = window.innerHeight;
+    var t, p, g, u, h, b, e, o, n;
+    l = s - 100;
+    m -= 200;
+    f = ~~(s / 20);
+    k = ~~(l / f) * f / f;
+    j = ~~(m / f) * f / f;
+    t = 0;
+    c.width = l;
+    c.height = m;
+    c.onmouseup = l = function() {
+        u = setInterval(function() {
+            q();
+            for(b = 0;b < j;b++) {
+                for(e = 0;e < k;e++) {
+                    n = g[b][e] ? -1 : 0;
+                    for(h = -1;2 > h;h++) {
+                        for(o = -1;2 > o;o++) {
+                            g[(j + (b + h)) % j][(k + (e + o)) % k] && n++
+                        }
+                    }
+                    g[b][e] ? 1 < n && 4 > n && (i[b][e] = 1) : 3 == n && (i[b][e] = 1)
+                }
+            }
+            g = i;
+            t++;
+            r()
+        }, 99);
+        p = 0
+    };
+    c.onmousedown = function() {
+        p = 1;
+        clearInterval(u)
+    };
+    c.onmousemove = c.onclick = function(e) {
+        b = ~~(e.offsetY / f) + 1;
+        d = ~~(e.offsetX / f);
+        p ? "mousemove" == e.type && (g[b][d] = 1) : g[b][d] = !g[b][d];
+        r()
+    };
+    q();
+    g = i;
+    l()
+                </script>
+        </body>
 </html>
