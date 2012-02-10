@@ -12,30 +12,33 @@
                         var a = c.getContext('2d');
                         document.body.clientWidth; // fix bug in webkit: http://qfox.nl/weblog/218
                 </script>
-                <script>    
-        // initialize an empty multidimentional array of "height(l)" tall into k"
-        λ=Function;
-
-    //function q() { i = []; for(h = 0;h < j;h++) { i[h] = [] } }
-    function r() {
-        for(b = 0;b < j;b++) {
-            for(e = 0;e < k;e++) {
-                a.fillStyle = g[b][e] ? "red" : "#eee", a.font = f + 8 + "pt serif", a.fillRect(e * f + 1, b * f + 1, f - 1, f - 1)
-            }
-        }
-    }
-    var i, k, j, f, l, m, s = window.innerWidth;
-    m = window.innerHeight;
-    var t, p, g, u, h, b, e, o, n;
+                <script>            
+	λ=Function;	
+	// initialize an empty multidimentional array of "height" tall into k"
+	//function q(){i=[];for(h=0;h<j;h++){i[h]=[]}}
+	q=λ("i=[];for(h=0;h<j;h++){i[h]=[]}"); 
+    r=λ("for(b=0;b<j;b++){for(e=0;e<k;e++){a.fillStyle=g[b][e]?'red':'#eee',a.font=f+8+'pt serif',a.fillRect(e*f+1,b*f+1,f-1,f-1)}}");
+    //function r() {
+    //    for(b = 0;b < j;b++) {
+    //        for(e = 0;e < k;e++) {
+    //            a.fillStyle = g[b][e] ? "red" : "#eee", a.font = f + 8 + "pt serif", a.fillRect(e * f + 1, b * f + 1, f - 1, f - 1)
+    //        }
+    //    }
+    //}	
+    //var i, k, j, f, l, m, 
+	s = innerWidth;
+    m = innerHeight;
+    //var t, p, g, u, h, b, e, o, n;
     l = s - 100;
     m -= 200;
     f = ~~(s / 20);
     k = ~~(l / f) * f / f;
     j = ~~(m / f) * f / f;
     t = 0;
+	console.log(l, m);
     c.width = l;
     c.height = m;
-    c.onmouseup = l = function() {
+    c.onmouseup=l=function(){
         u = setInterval(function() {
             q();
             for(b = 0;b < j;b++) {
@@ -55,10 +58,12 @@
         }, 99);
         p = 0
     };
-    c.onmousedown = function() {
+	
+	c.onmousedown=λ("p=1;clearInterval(u)");
+    /*c.onmousedown = function() {
         p = 1;
         clearInterval(u)
-    };
+    };*/
     c.onmousemove = c.onclick = function(e) {
         b = ~~(e.offsetY / f) + 1;
         d = ~~(e.offsetX / f);
@@ -68,6 +73,6 @@
     q();
     g = i;
     l()
-                </script>
-        </body>
+</script>
+</body>
 </html>
