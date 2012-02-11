@@ -24,28 +24,13 @@ l=Z('u=setInterval("q();for(b=0;b<j;b++)for(e=0;e<k;e++){n=g[b][e]?-1:0;for(h=-1
 
 c.onmousedown=Z("D=1;clearInterval(u)");
 
-c.onmousemove = c.onmouseup = function(e) {
-    // calculate the square they clicked on
-    b = ~~(e.offsetY / f);
-    d = ~~(e.offsetX / f);
-
-    if (e.type == "mousemove") {
-        if (D) {
-            p=1;
-            D=0;
-        }
-        else if (p == 1) {
-            g[b][d] = 1;
-        }
-    }
-    else {
-        if (!p) {
-            g[b][d] = !g[b][d];
-        }
-        p=0;D=0;
-        l();
-    }
-
+c.onmousemove = c.onmouseup = function(a) {
+    b = ~~(a.offsetY / f);
+    d = ~~(a.offsetX / f);
+    "mousemove" == a.type ? 
+        D ? (p = 1, D = 0) : 
+            1 == p && (g[b][d] = 1) 
+        : (p || (g[b][d] = !g[b][d]), D = p = 0, l());
     r()
 };
 q();
