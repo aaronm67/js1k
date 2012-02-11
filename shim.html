@@ -45,18 +45,18 @@
     //c.onmousedown=Z("console.log('mousedown');p=1;clearInterval(u)");
     c.onmousedown = function(e) {D=1;B=e.offsetY;C=e.offsetX;clearInterval(u)};
     c.onmousemove = c.onmouseup = function(e) {
-    G=e.offsetY;
-    H=e.offsetX;
-    E = 2<<B-G;
-    F = 2<<C-H;
+        G=e.offsetY;
+        H=e.offsetX;
+        E = 2<<B-G;
+        F = 2<<C-H;
 
-    if (D && (E > 9 || F > 9)) {
-        p = 1;
-    }
-    b = ~~(G / f);
-    d = ~~(H / f);
-    "mousemove" == e.type ? p && (g[b][d] = 1) : (p || (g[b][d] = !g[b][d]), p = D = 0, l());
-    r()
+        if (D && (E > 9 || F > 9)) {
+            p = 1;
+        }
+        b = ~~(G / f);
+        d = ~~(H / f);
+        "mousemove" == e.type ? p && (g[b][d] = 1) : (p || (g[b][d] = !g[b][d]), p = D = 0, l());
+        r()
 /*
     if (e.type == "mousemove") {
         if (p) {
