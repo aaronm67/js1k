@@ -30,7 +30,6 @@ c.onmousemove = c.onmouseup = function(e) {
     d = ~~(e.offsetX / f);
 
     if (e.type == "mousemove") {
-        console.log(D);
         if (D) {
             p=1;
             D=0;
