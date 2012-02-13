@@ -1,8 +1,8 @@
 Z=Function;
 
-I=Z("H","return document.createElement(H)");
-J=Z("H","b.appendChild(H)");
-// initialize an empty multidimentional array of "height" tall into k"
+I=Z("H","M=document.createElement(H)");
+J=Z("b.insertBefore(M,c)");
+// initialize an empty multidimentional array of "height" tall into i"
 q=Z("i=[];for(h=0;h<j;h++)i[h]=[]"); 
 
 // "Draw"
@@ -15,12 +15,13 @@ F=Z("q();for(H=0;H<j;H++)for(e=0;e<k;e++){n=g[H][e]?-1:0;for(h=-1;2>h;h++)for(o=
 // STOP()
 G=Z("clearInterval(u)");
 // Set timer for update();
-l=Z('u=setInterval("F()",99),p=0,E=1');
+L=Z('u=setInterval("F()",O),p=0,E=1');
 
+P=O=99;
 N="onmouseup";
 s =innerWidth;
 m =innerHeight;
-l =s-99;
+l =s-P;
 d =m-200;
 // BOX_SIZE
 f = ~~(d / 30);
@@ -33,15 +34,39 @@ D=u=E=p=t=0;
 c.width = l;
 c.height = d;
 
-M=I("a");
-M.innerText = "test";
-M[N] = function() { alert("hi there"); }
-J(M);
+I("h1");
+M.innerText = "Conway's Game of Life";
+J();
+
+I("a");
+K=M;
+K.a = K.innerText = "test";
+K[N] = Z("K.innerText='test2'");
+J();
+
+I("input");
+M.type="range";
+M.min = P;
+M.max = 999;
+M.value = O;
+M.onchange = function(e) { O=M.value;G();L();} 
+J();
 
 c.onmousedown=Z("D=1;G()");
 c.onmousemove = c[N] = function(a) {
     H = ~~(a.offsetY / f); // y = Math.floor(offsetY / gridSize) 
     e = ~~(a.offsetX / f); // x = Math.floor(offsetX / gridSize)
+	
+	if (/v/.test(a.type)) {
+		if (D) {
+			p = 1;
+			D = 0;
+		}
+		else if (p) {
+			g[H][e] = 1;
+		}		
+	}
+	
     // if (mousemove) {
     /v/.test(a.type) ? 
         //if (hasMousedDown) { isDragging = 1; hasMousedDown = 0; }
@@ -51,7 +76,7 @@ c.onmousemove = c[N] = function(a) {
         // } else { 
         : (p || (g[H][e] = !g[H][e]),  // Toggle current square
                 D = p = 0, // hasMousedDown = isDragging = FALSE;
-            l() // Draw();
+            L() // Start timer (if needed)
         );
         // }
     r()
