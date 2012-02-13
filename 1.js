@@ -43,7 +43,7 @@ c.onmousemove = c[N] = function(a) {
     H = ~~(a.offsetY / f); // y = Math.floor(offsetY / gridSize) 
     e = ~~(a.offsetX / f); // x = Math.floor(offsetX / gridSize)
     // if (mousemove) {
-    "mousemove" == a.type ? 
+    /v/.test(a.type) ? 
         //if (hasMousedDown) { isDragging = 1; hasMousedDown = 0; }
         D ? (p = 1, D = 0) 
         // else if (isDragging) { grid[x][y] = LIVE; }
