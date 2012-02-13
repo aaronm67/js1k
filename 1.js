@@ -13,7 +13,7 @@ r=Z("for(H=0;H<j;H++)for(e=k;e--;)a.fillStyle=g[H][e]?'red':'#eee',a.fillRect(e*
 F=Z("q();for(H=0;H<j;H++)for(e=0;e<k;e++){n=g[H][e]?-1:0;for(h=-1;2>h;h++)for(o=-1;2>o;o++)g[(j+(H+h))%j][(k+(e+o))%k]&&n++;g[H][e]?1<n&&4>n&&(i[H][e]=1):3==n&&(i[H][e]=1)}g=i;t++;r()");
 
 // STOP()
-G=Z("clearInterval(u)");
+G=Z("clearInterval(u);E=0");
 // Set timer for update();
 L=Z('u=setInterval("F()",O),p=0,E=1');
 
@@ -34,39 +34,27 @@ D=u=E=p=t=0;
 c.width = l;
 c.height = d;
 
+Q="textContent";
+
 I("h1");
-M.innerText = "Conway's Game of Life";
+M[Q] = "Conway's Game of Life";
 J();
 
-I("a");
-K=M;
-K.a = K.innerText = "test";
-K[N] = Z("K.innerText='test2'");
+I("button");
+M[N] = Z("this[Q]=E?(G(),'■'):(L(),'▢')");
 J();
 
 I("input");
 M.type="range";
-M.min = P;
 M.max = 999;
 M.value = O;
-M.onchange = function(e) { O=M.value;G();L();} 
+M.onchange = Z("O=M.value;G();L()"); 
 J();
 
 c.onmousedown=Z("D=1;G()");
 c.onmousemove = c[N] = function(a) {
     H = ~~(a.offsetY / f); // y = Math.floor(offsetY / gridSize) 
     e = ~~(a.offsetX / f); // x = Math.floor(offsetX / gridSize)
-	
-	if (/v/.test(a.type)) {
-		if (D) {
-			p = 1;
-			D = 0;
-		}
-		else if (p) {
-			g[H][e] = 1;
-		}		
-	}
-	
     // if (mousemove) {
     /v/.test(a.type) ? 
         //if (hasMousedDown) { isDragging = 1; hasMousedDown = 0; }
