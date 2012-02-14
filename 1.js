@@ -76,6 +76,10 @@ M.onchange = Z("O=M.value;E&&(G()||L())");
 J();
 
 c.onmousedown=Z("D=1;G()");
+
+c.onmousemove = c[N]=Z("a","H=~~((a.pageY-c.offsetTop)/f);e=~~((a.pageX-c.offsetLeft)/f);/v/.test(a.type)?D?(p=1,D=0):1==p&&(g[H][e]=1):(p||(g[H][e]=!g[H][e]),D=p=0,E&&L());r()")
+
+/*
 c.onmousemove = c[N] = function(a) {
     H = ~~((a.pageY-c.offsetTop) /f); // y = Math.floor(offsetY / gridSize) 
     e = ~~((a.pageX-c.offsetLeft) / f); // x = Math.floor(offsetX / gridSize)
@@ -92,7 +96,7 @@ c.onmousemove = c[N] = function(a) {
         );
         // }
     r()
-};
+};*/
 q();
 g = i;
 K[N]()
