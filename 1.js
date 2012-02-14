@@ -10,29 +10,26 @@ q=Z("i=[];for(h=0;h<j;h++)i[h]=[]");
 //r=Z("for(H=0;H<j;H++)for(e=k;e--;){a.fillStyle=g[H][e]?'red':'#eee',a.font='25px Arial',a.fillText('♥',e*f+1,H*f+1)}");
 r=Z("for(H=0;H<j;H++)for(e=k;e--;)a.fillStyle=g[H][e]?'red':'#eee',a.fillRect(e*f+1,H*f+1,f-1,f-1)");
 
-// THIS VERSION OF UPDATE KEEPS A GENERATION COUNTER
-//F=Z("q();for(H=0;H<j;H++)for(e=0;e<k;e++){n=g[H][e]?-1:0;for(h=-1;2>h;h++)for(o=-1;2>o;o++)g[(j+(H+h))%j][(k+(e+o))%k]&&n++;g[H][e]?1<n&&4>n&&(i[H][e]=1):3==n&&(i[H][e]=1)}g=i;t++;r()");
+F=Z("q();for(H=0;H<j;H++)for(e=0;e<k;e++){n=g[H][e]?-1:0;for(h=-1;2>h;h++)for(o=-1;2>o;o++)g[(j+(H+h))%j][(k+(e+o))%k]&&n++;g[H][e]?1<n&&4>n&&(i[H][e]=1):3==n&&(i[H][e]=1)}g=i;S[Q]=t+++'th Generation';r()");
 // UPDATE();
-F=Z("q();for(H=0;H<j;H++)for(e=0;e<k;e++){n=g[H][e]?-1:0;for(h=-1;2>h;h++)for(o=-1;2>o;o++)g[(j+(H+h))%j][(k+(e+o))%k]&&n++;g[H][e]?1<n&&4>n&&(i[H][e]=1):3==n&&(i[H][e]=1)}g=i;r()");
 
 // STOP()
 G=Z("clearInterval(u)");
 // Set timer for update();
 L=Z('u=setInterval("F()",O),p=0');
 
-P=O=99;
+O=99;
 N="onmouseup";
-s =innerWidth;
-m =innerHeight;
-l =s-P;
-d =m-200;
+l =innerWidth-O;
+d =innerHeight-O;
 // BOX_SIZE
 f = ~~(d / 30);
 // GRID_WIDTH
 k = ~~(l / f);
 // GRID_HEIGHT
 j = ~~(d / f);
-D=u=E=p=/*t=*/0;
+D=u=p=t=0;
+E=1;
 
 c.width = l;
 c.height = d;
@@ -51,18 +48,21 @@ J();
 */
 
 I("a");
+S=M;
+J();
+
+I("br");
+J();
+
+I("a");
 M[Q] = "Start/Stop";
 J();
 
 I("button");
-K=M;
-K[N] = Z("E=!E;K[Q]=E?(L(),'■'):(G(),'▢')");
+M[Q]='_';
+M[N]=V=Z("E=!E;E?L():G()");
+V();
 J();
-
-
-R("br");
-J();
-
 
 I("a");
 M[Q] = "Speed";
@@ -77,8 +77,8 @@ J();
 
 c.onmousedown=Z("D=1;G()");
 c.onmousemove = c[N] = function(a) {
-    H = ~~(a.offsetY / f); // y = Math.floor(offsetY / gridSize) 
-    e = ~~(a.offsetX / f); // x = Math.floor(offsetX / gridSize)
+    H = ~~((a.pageY-c.offsetTop) /f); // y = Math.floor(offsetY / gridSize) 
+    e = ~~((a.pageX-c.offsetLeft) / f); // x = Math.floor(offsetX / gridSize)
     // if (mousemove) {
     /v/.test(a.type) ? 
         //if (hasMousedDown) { isDragging = 1; hasMousedDown = 0; }
