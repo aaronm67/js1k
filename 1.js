@@ -4,7 +4,7 @@ I=Z("H","M=document.createElement(H)");
 J=Z("b.insertBefore(M,c)");
 
 // initialize an empty multidimentional array of "height" tall into i"
-q=Z("i=[];for(h=0;h<j;h++)i[h]=[]"); 
+q=Z("i=[];for(h=j;h--;)i[h]=[]"); 
 
 // "Draw"
 //r=Z("for(H=0;H<j;H++)for(e=k;e--;){a.fillStyle=g[H][e]?'red':'#eee',a.font='25px Arial',a.fillText('♥',e*f+1,H*f+1)}");
