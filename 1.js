@@ -98,5 +98,4 @@ c.onmousemove = c[N] = function(a) {
     r()
 };*/
 q();
-g = i;
-K[N]()
+g = i
